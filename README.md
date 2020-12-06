@@ -21,3 +21,12 @@
   - Best Model Parameter:  {'C': 5, 'decision_function_shape': 'ovo', 'kernel': 'rbf'} ← C が変わった
   - accuracy_score ; 0.9993095238095238
   - submitted score ; 0.98167 :-p
+
+- digit_recognizer_SVM4.ipynb
+  - smv.SVC を使って，ハイパーパラメータはグリッドサーチで最適化
+  - グリッドサーチ時には，3000 個のデータを使用
+  - C のサーチ範囲を range(5, 50)。それ以外は decision_function_shape="ovo"，kernel="rbf" で固定
+  - Best Model Parameter:  {'C': 8, 'decision_function_shape': 'ovo', 'kernel': 'rbf'}
+  - accuracy_score ; 0.9998095238095238
+  - submitted score ; 0.98217
+  - 1301 / 2599
