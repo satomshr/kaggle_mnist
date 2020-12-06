@@ -30,3 +30,14 @@
   - accuracy_score ; 0.9998095238095238
   - submitted score ; 0.98217
   - 1301 / 2599
+
+- digit_recognizer_MLP1.ipynb
+  - MLPClassfier を使用。ハイパーパラメタはデフォルト
+  - Kaggle の notebook を利用。私の PC より圧倒的に速い
+  - accuracy_score ; 1.0
+  - submitted score ; 0.97360
+
+- digital_recognizer_MLP2.csv
+  - MLPClassfier を使用。hidden_layer_sizes = (100, 100)
+  - Kaggle の notebook を利用
+  - accuracy_score ; 1.0
