@@ -37,7 +37,33 @@
   - accuracy_score ; 1.0
   - submitted score ; 0.97360
 
-- digital_recognizer_MLP2.csv
+- digit_recognizer_MLP2.csv
   - MLPClassfier を使用。hidden_layer_sizes = (100, 100)
   - Kaggle の notebook を利用
   - accuracy_score ; 1.0
+  - submitted score ; 0.97639
+
+- digit_recognizer_MLP3.csv
+  1. 全データで 0 のピクセルを drop した
+  2. GridSearchCV で，データ数 5000 個で粗くサーチ (cv=4)
+    - Best Model Parameter: {'batch_size': 50, 'early_stopping': False, 'hidden_layer_sizes': 100, 'learning_rate_init': 0.01}
+    - Train score: 0.998
+    - Cross Varidation score: 0.9451999999999999
+  3. GridSearchCV で，全データを使ってサーチ (cv=4)
+    - Best Model Parameter: {'batch_size': 100, 'early_stopping': False, 'hidden_layer_sizes': 100, 'learning_rate_init': 0.001}
+    - Train score: 1.0
+    - Cross Varidation score: 0.9706190476190476
+  4. 上記の結果で，全データを使って改めて学習
+  5. 結果
+    - submitted score ; 0.97510
+
+
+  | Ver. | accuracy_score | submitted score |
+  | ---- | ---- | ---- |
+  | SVM1 | 0.9891428571428571 | 0.97521 |
+  | SVM2 | 0.9999047619047619 | 0.98207 |
+  | SVM3 | 0.9993095238095238 | 0.98167 |
+  | SVM4 | 0.9998095238095238 | 0.98217 |
+  | MLP1 | 1.0 | 0.97360 |
+  | MLP2 | 1.0 | 0.97639 |
+  | MLP3 | 1.0 | 0.97510 |
