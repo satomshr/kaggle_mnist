@@ -31,6 +31,40 @@
   - submitted score ; 0.98217
   - 1301 / 2599
 
+- digit_recognizer_SVM5a.csv
+  - データの加工
+    - すべてが 0 の列を drop
+    - 255 で割る
+    - 行ごとに平均 (mean) と標準偏差 (std) を計算し，列に追加
+  - SVM1
+    - 3000 個のデータを使って GridSearchCV
+    - Best Model Parameter: {'C': 10, 'decision_function_shape': 'ovo', 'kernel': 'rbf'}
+    - Train score: 1.0
+    - Cross Varidation score: 0.9396666666666667
+    - Total Train score: 0.9546190476190476
+  - SVM2
+    - 全データを使って GridSearchCV。C : [2, 5, 10, 20, 50]
+    - Best model parameter :　{'C': 10, 'decision_function_shape': 'ovo', 'kernel': 'rbf'}
+    - Train score: 0.9999523809523809
+    - Cross Varidation score: 0.9806190476190476
+  - SVM3
+    - 全データを使って GridSearchCV。C : [6, 8, 10, 13, 16, 19]
+    - Best model parameter :　{'C': 8, 'decision_function_shape': 'ovo', 'kernel': 'rbf'}
+    - Train score: 0.9999047619047619
+    - Cross Varidation score: 0.9807857142857144
+  - SVM4
+    - 全データを使って GridSearchCV。C : [7, 8, 9]
+    - Best Model Parameter: {'C': 8, 'decision_function_shape': 'ovo', 'kernel': 'rbf'}
+    - Train score: 0.9999047619047619
+    - Cross Varidation score: 0.9807857142857144
+  - SVM5
+    - 全データを使って, 最適パラメータで学習して，予測
+    - accuracy_score : 0.9999047619047619
+    - submitted score : 0.98228
+    - 1398 / 2768
+    - gamma も最適化したほうが良さそうだ
+  - Kaggle notebook Ver.5 (Ver.4 も同じだと思うが，save を途中で止めた)
+
 - digit_recognizer_MLP1.ipynb
   - MLPClassfier を使用。ハイパーパラメタはデフォルト
   - Kaggle の notebook を利用。私の PC より圧倒的に速い
@@ -43,7 +77,7 @@
   - accuracy_score ; 1.0
   - submitted score ; 0.97639
 
-- digit_recognizer_MLP3.csv
+- digit_recognizer_MLP3a.csv
   1. 全データで 0 のピクセルを drop した
   2. GridSearchCV で，データ数 5000 個で粗くサーチ (cv=4)
     - Best Model Parameter: {'batch_size': 50, 'early_stopping': False, 'hidden_layer_sizes': 100, 'learning_rate_init': 0.01}
@@ -64,6 +98,7 @@
   | SVM2 | 0.9999047619047619 | 0.98207 |
   | SVM3 | 0.9993095238095238 | 0.98167 |
   | SVM4 | 0.9998095238095238 | 0.98217 |
+  | SVM5a | 0.9999047619047619 | 0.98228 |
   | MLP1 | 1.0 | 0.97360 |
   | MLP2 | 1.0 | 0.97639 |
   | MLP3 | 1.0 | 0.97510 |
