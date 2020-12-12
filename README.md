@@ -64,6 +64,7 @@
     - 1398 / 2768
     - gamma も最適化したほうが良さそうだ
   - Kaggle notebook Ver.5 (Ver.4 も同じだと思うが，save を途中で止めた)
+  - ハイパーパラメータは変わってないが，スコアは上がった。drop，mean, std が効いたか?
 
 - digit_recognizer_MLP1.ipynb
   - MLPClassfier を使用。ハイパーパラメタはデフォルト
