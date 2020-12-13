@@ -66,6 +66,82 @@
   - Kaggle notebook Ver.5 (Ver.4 も同じだと思うが，save を途中で止めた)
   - ハイパーパラメータは変わってないが，スコアは上がった。drop，mean, std が効いたか?
 
+- digit_recognizer_SVM6a.csv
+  - SMV1
+    - 3000 個のデータを使って GridSearchCV。C と gamma を振る
+    - Best model parameter : {'C': 10, 'gamma': 0.01}
+    - Train score: 1.0
+    - Cross Varidation score: 0.9343333333333332 (上より悪い)
+    - Total Train score: 0.9514523809523809 (上より悪い)
+    - CV = 0.9343 となる組み合わせは…
+      - 0.9343 (+/-0.0104) for {'C': 10, 'gamma': 0.01}
+      - 0.9343 (+/-0.0104) for {'C': 100, 'gamma': 0.01}
+      - 0.9343 (+/-0.0104) for {'C': 1000, 'gamma': 0.01}
+      - 0.9343 (+/-0.0104) for {'C': 10000, 'gamma': 0.01}
+      - 0.9343 (+/-0.0104) for {'C': 100000, 'gamma': 0.01}
+      - 0.9037 (+/-0.0195) for {'C': 100, 'gamma': 0.001}
+      - 0.9017 (+/-0.0194) for {'C': 1000, 'gamma': 0.001}
+      - 0.9017 (+/-0.0194) for {'C': 10000, 'gamma': 0.001}
+      - 0.9017 (+/-0.0194) for {'C': 100000, 'gamma': 0.001}
+  - SVM2
+    - 3000 個のデータを使って GridSearchCV。C と gamma を振る
+    - Best model parameter : {'C': 3, 'gamma': 0.03}
+    - Train score: 1.0
+    - Cross Varidation score: 0.9446666666666665 (まだ良いとは言えない)
+    - Total Train score: 0.9583095238095238 (まだ良いとは言えない)
+    - CV = 0.9446 となる組み合わせは…
+      - 0.9447 (+/-0.0185) for {'C': 3, 'gamma': 0.03}
+      - 0.9447 (+/-0.0185) for {'C': 10, 'gamma': 0.03}
+      - 0.9447 (+/-0.0185) for {'C': 30, 'gamma': 0.03}
+      - 0.9447 (+/-0.0185) for {'C': 100, 'gamma': 0.03}
+      - 0.9447 (+/-0.0185) for {'C': 3000, 'gamma': 0.03}
+      - 0.9447 (+/-0.0185) for {'C': 10000, 'gamma': 0.03}
+      - 0.9447 (+/-0.0185) for {'C': 30000, 'gamma': 0.03}
+      - 0.9447 (+/-0.0185) for {'C': 100000, 'gamma': 0.03}
+  - SVM3
+    - 5000 個のデータを使って GridSearchCV。C と gamma を振る。感じ的には，C を振っても変わらず，gamma の影響が大きい。今回の目的は，gamma の値を絞りに行くこと
+    - Best Model Parameter: {'C': 10, 'gamma': 0.03}
+    - Train score: 1.0
+    - Cross Varidation score: 0.959
+    - Total Train score: 0.9659285714285715
+    - CV = 0.959 となる組み合わせは…
+      - 0.9590 (+/-0.0126) for {'C': 10, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 30, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 100, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 3000, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 10000, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 30000, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 100000, 'gamma': 0.03}
+  - SVM4
+    - 5000 個のデータを使って GridSearchCV。C と gamma を振る。gamma の範囲を，より絞り込んだ。
+    - Best model parameter : {'C': 10, 'gamma': 0.03}
+    - Train score: 1.0
+    - Cross Varidation score: 0.959
+    - Total Train score: 0.9659285714285715
+    - CV = 0.959 となる組み合わせは
+      - 0.9590 (+/-0.0126) for {'C': 10, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 30, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 100, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 3000, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 10000, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 30000, 'gamma': 0.03}
+      - 0.9590 (+/-0.0126) for {'C': 100000, 'gamma': 0.03}
+  - SVM5
+    - 8000 個のデータを使って GridSearchCV。gamma = 0.03 に固定して，C を振る
+    - Best model parameter : {'C': 10, 'gamma': 0.03}
+    - Train score: 1.0
+    - Cross Varidation score: 0.9684999999999999
+    - 
+    - CV=0.9685 になる組み合わせは
+      - 0.9684 (+/-0.0079) for {'C': 3, 'gamma': 0.03}
+      - 0.9685 (+/-0.0087) for {'C': 10, 'gamma': 0.03}
+      - 0.9685 (+/-0.0087) for {'C': 30, 'gamma': 0.03}
+      - 0.9685 (+/-0.0087) for {'C': 100, 'gamma': 0.03}
+      - 0.9685 (+/-0.0087) for {'C': 3000, 'gamma': 0.03}
+      - 0.9685 (+/-0.0087) for {'C': 10000, 'gamma': 0.03}
+      - 0.9685 (+/-0.0087) for {'C': 30000, 'gamma': 0.03}
+      - 0.9685 (+/-0.0087) for {'C': 100000, 'gamma': 0.03}
+
 - digit_recognizer_MLP1.ipynb
   - MLPClassfier を使用。ハイパーパラメタはデフォルト
   - Kaggle の notebook を利用。私の PC より圧倒的に速い
