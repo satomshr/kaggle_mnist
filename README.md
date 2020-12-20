@@ -148,7 +148,7 @@
 
 
 - digit_recognizer_SVM7a.csv
-  - SMV1
+  - SVM1
     - 3000 個のデータを使って GridSearchCV。C と gamma を振る
     - Best model parameter : {'C': 10, 'gamma': 0.001}
     - Train score: 0.9593333333333334
@@ -156,7 +156,7 @@
     - Total Train score: 0.9251904761904762 (上より悪い)
     - CV = 0.9063 となる組み合わせは…
       - 0.9063 (+/-0.0180) for {'C': 10, 'gamma': 0.001}
-  - SMV2
+  - SVM2
     - 3000 個のデータを使って GridSearchCV。C と gamma を振る
     - Best model parameter : {'C': 3, 'gamma': 0.03}
     - Train score: 1.0
@@ -164,11 +164,37 @@
     - Total Train score : 0.9587857142857142
     - CV = 0.9443 となる組み合わせは
       - 0.9443 (+/-0.0183) for {'C': 3, 'gamma': 0.03}
+      - 0.9443 (+/-0.0183) for {'C': 10, 'gamma': 0.03}
       - 0.9443 (+/-0.0183) for {'C': 30, 'gamma': 0.03}
       - 0.9443 (+/-0.0183) for {'C': 100, 'gamma': 0.03}
       - 0.9443 (+/-0.0183) for {'C': 300, 'gamma': 0.03}
-
-
+  - SVM4 (SVM3 はスキップ)
+    - 8000 個のデータを使って GridSearchCV。C と gamma を振る
+    - Best model parameter : Best model parameter : {'C': 10, 'gamma': 0.025}
+    - Train score: 1.0
+    - Cross Varidation score: 0.9695
+    - Total Train score : 0.9737857142857143
+    - CV = 0.9695 となる組み合わせは
+      - 0.9695 (+/-0.0062) for {'C': 10, 'gamma': 0.025}
+      - 0.9695 (+/-0.0062) for {'C': 30, 'gamma': 0.025}
+      - 0.9695 (+/-0.0062) for {'C': 100, 'gamma': 0.025}
+      - 0.9695 (+/-0.0062) for {'C': 300, 'gamma': 0.025}
+  - SVM5
+    - 8000 個のデータを使って GridSearchCV。C と gamma を振る
+    - Best model parameter : {'C': 5, 'gamma': 0.028}
+    - Train score: 1.0
+    - Cross Varidation score: 0.969375
+    - Total Train score: 0.9738095238095238
+    - CV = 0.969375 となる組み合わせは
+      - 0.96937 (+/-0.00795) for {'C': 5, 'gamma': 0.028}
+      - 0.96937 (+/-0.00795) for {'C': 8, 'gamma': 0.028}
+      - 0.96937 (+/-0.00795) for {'C': 10, 'gamma': 0.028}
+      - 0.96937 (+/-0.00795) for {'C': 15, 'gamma': 0.028}
+      - 0.96937 (+/-0.00795) for {'C': 20, 'gamma': 0.028}
+  - 最後
+    - C=5, gamma=0.028 で全データを使って学習
+    - accuracy_score : 0.9999761904761905
+    - submitted score : 0.98375 (1108/2134) ←スコアは上がった (上位 50% からは外れた)
 
 - digit_recognizer_MLP1.ipynb
   - MLPClassfier を使用。ハイパーパラメタはデフォルト
