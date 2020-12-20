@@ -147,6 +147,29 @@
     - submitted score : 0.98353 (1388/2803) ← 上がった
 
 
+- digit_recognizer_SVM7a.csv
+  - SMV1
+    - 3000 個のデータを使って GridSearchCV。C と gamma を振る
+    - Best model parameter : {'C': 10, 'gamma': 0.001}
+    - Train score: 0.9593333333333334
+    - Cross Varidation score: 0.9063333333333333 (上より悪い)
+    - Total Train score: 0.9251904761904762 (上より悪い)
+    - CV = 0.9063 となる組み合わせは…
+      - 0.9063 (+/-0.0180) for {'C': 10, 'gamma': 0.001}
+  - SMV2
+    - 3000 個のデータを使って GridSearchCV。C と gamma を振る
+    - Best model parameter : {'C': 3, 'gamma': 0.03}
+    - Train score: 1.0
+    - Cross Varidation score: 0.9443333333333334
+    - Total Train score : 0.9587857142857142
+    - CV = 0.9443 となる組み合わせは
+      - 0.9443 (+/-0.0183) for {'C': 3, 'gamma': 0.03}
+      - 0.9443 (+/-0.0183) for {'C': 30, 'gamma': 0.03}
+      - 0.9443 (+/-0.0183) for {'C': 100, 'gamma': 0.03}
+      - 0.9443 (+/-0.0183) for {'C': 300, 'gamma': 0.03}
+
+
+
 - digit_recognizer_MLP1.ipynb
   - MLPClassfier を使用。ハイパーパラメタはデフォルト
   - Kaggle の notebook を利用。私の PC より圧倒的に速い
